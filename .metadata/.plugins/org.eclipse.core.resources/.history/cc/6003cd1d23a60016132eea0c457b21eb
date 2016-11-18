@@ -1,0 +1,33 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Additional Page</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/myStyle.css">
+    </head>
+    <body>
+        
+        <h1>Welcome, ${param["firstName"]}!</h1>
+            First Name: ${param["firstName"]}
+            <br><br>
+            Last Name: ${param["lastName"]}
+            <br><br>
+            City: ${param["city"]}
+            <br><br>
+            Email: ${param["email"]}
+            <br><br>
+            GitHub: ${param["github"]}
+            <br><br>
+        <button type="button" onclick=window.location.href="cart">
+            Servlet 1 My items</button>
+            
+        <button type="button" onclick=window.location.href="checkout">
+            Servlet 2 Checkout</button>
+            <br><br>Date and Time is ${time}<br><br>
+             GitHub: <c:set var="github" scope="session" value="${param["github"]}"/>
+            <c:if test="${not empty github}">provided</c:if>
+            <c:if test="${empty github}">not provided</c:if>
+    </body>
+</html>

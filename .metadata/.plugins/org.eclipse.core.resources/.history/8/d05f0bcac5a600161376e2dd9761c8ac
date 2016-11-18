@@ -1,0 +1,21 @@
+function validateInput() {
+    // uncomment to disable input validation
+    //return true;
+    
+    for(i=0; i<4; i++) {
+        var value = document.forms[0][i].value;
+        if(value == null || value == "") {
+            var alertMessage = document.forms[0][i].name
+                    + " cannot be empty!";
+            alert(alertMessage);
+            return false;
+        }
+    }
+    
+    var value = document.forms[0][3].value;
+    if(!value.includes("@")) {
+            var alertMessage = "Email must include @";
+            alert(alertMessage);
+            return false;
+        }
+}
